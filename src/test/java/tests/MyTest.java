@@ -9,23 +9,21 @@ import page.StorePage;
 public class MyTest extends BaseTest {
 	
 	@Test
-	public void firstTest() throws InterruptedException {
+	public void firstTest()   {
 		HomePage hm=new HomePage(driver);
 		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(driver);
 		sp.enterinSearch("blue jeans");
-		hm.waitforSecond();
 	}
 	
 	@Test
-	public void secondTest() throws InterruptedException {
+	public void secondTest() {
 		HomePage hm=new HomePage(driver);
 		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(driver);
 		sp.enterinSearch("red");
-		hm.waitforSecond();
 	}
 	
 	
