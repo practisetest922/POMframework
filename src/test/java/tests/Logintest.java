@@ -1,29 +1,36 @@
 package tests;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
 import page.HomePage;
 import page.StorePage;
 
-public class MyTest extends BaseTest {
+public class Logintest extends BaseTest {
 	
-	@Test
+	@Test(description = "Login and verify blue jeans")
+	@Description("Searches for blue jeans")
 	public void firstTest()   {
 		HomePage hm=new HomePage(driver);
 		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(driver);
-		sp.enterinSearch("blue jeans");
+		sp.search("blue jeans");
 	}
 	
-	@Test
+	@Test(description = "Login and verify red ")
+	@Description("Searches for red ")
 	public void secondTest() {
 		HomePage hm=new HomePage(driver);
 		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(driver);
-		sp.enterinSearch("red");
+		sp.search("red");
+		assertEquals("Red",sp.verifyRed());
+		
 	}
 	
 	

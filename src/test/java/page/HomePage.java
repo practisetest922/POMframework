@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.BasePage;
+import io.qameta.allure.Step;
 
 public class HomePage extends BasePage {
 	
@@ -18,6 +19,7 @@ public class HomePage extends BasePage {
 		super(driver);
 	}
 	
+	@Step("clicked on shopnow button")
 	public void clickbuttonShopnow(){
 		//driver.findElement(shopNowbutton).click();
 		wait.until(ExpectedConditions.visibilityOf(shopNowbutton)).click();
