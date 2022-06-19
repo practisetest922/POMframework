@@ -9,7 +9,7 @@ import io.qameta.allure.Description;
 import page.HomePage;
 import page.StorePage;
 
-public class Logintest extends BaseTest {
+public class NavigationTest extends BaseTest {
 	
 	@Test(description = "Login and verify blue jeans")
 	@Description("Searches for blue jeans")
@@ -21,17 +21,6 @@ public class Logintest extends BaseTest {
 		sp.search("blue jeans");
 	}
 	
-	@Test(description = "Login and verify red ")
-	@Description("Searches for red ")
-	public void secondTest() {
-		HomePage hm=new HomePage(getDriver());
-		hm.openUrl();
-		hm.clickbuttonShopnow();
-		StorePage sp=new StorePage(getDriver());
-		sp.search("red");
-		assertEquals("Red",sp.verifyRed());
-		
-	}
 	
 	
 }
