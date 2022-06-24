@@ -4,7 +4,8 @@
   <test  name = "Parallel Tests in chrome" thread-count="2" parallel = "methods" >
   <parameter name="browser" value="CHROME"/>
     <classes>
-      <class name="tests.Logintest"/>
+      <class name="tests.DifferentLogins"/>
+      <!--       <class name="tests.NavigationTest"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

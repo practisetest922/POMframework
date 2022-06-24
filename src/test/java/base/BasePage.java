@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.qameta.allure.Step;
+import utils.WebConfig;
 
 public class BasePage {
 
@@ -19,10 +20,18 @@ public class BasePage {
 		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
-	@Step("opening url....")
-	public void openUrl() {
-		driver.get("https://askomdch.com/");
-	}
 	
+	
+//	@Step("opening url....")
+//	public void openUrl() {
+//		String baseUrl=WebConfig.BASE_CONFIG.getWebUrl();
+//		driver.get(baseUrl);
+//	}
+	
+	@Step("opening url....")
+	public void openUrlSauce() {
+	driver.get("https://www.saucedemo.com/");
+	
+	}
 	
 }

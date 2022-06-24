@@ -15,7 +15,7 @@ public class NavigationTest extends BaseTest {
 	@Description("Searches for blue jeans")
 	public void firstTest()   {
 		HomePage hm=new HomePage(getDriver());
-		hm.openUrl();
+	//	hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(getDriver());
 		sp.search("blue jeans");

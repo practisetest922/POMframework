@@ -15,7 +15,7 @@ public class Logintest extends BaseTest {
 	@Description("Searches for blue jeans")
 	public void firstTest()   {
 		HomePage hm=new HomePage(getDriver());
-		hm.openUrl();
+//		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(getDriver());
 		sp.search("blue jeans");
@@ -25,7 +25,7 @@ public class Logintest extends BaseTest {
 	@Description("Searches for red ")
 	public void secondTest() {
 		HomePage hm=new HomePage(getDriver());
-		hm.openUrl();
+//		hm.openUrl();
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(getDriver());
 		sp.search("red");
