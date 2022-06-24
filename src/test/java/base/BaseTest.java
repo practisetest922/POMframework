@@ -53,7 +53,8 @@ public class BaseTest {
 	public void startDriver(@Optional("chrome") String browser,Method method) {
 	//	 reports.createTest(method.getName());
 		setDriver(new DriverManager().initDriver(browser));
-		getDriver().get(WebConfig.BASE_CONFIG.getWebUrl());
+		String url=WebConfig.BASE_CONFIG.getWebUrl();
+		getDriver().get(url);
 		System.out.println("Current thread: " + Thread.currentThread().getId() + ", " + "driver " + getDriver());
 	}
 
