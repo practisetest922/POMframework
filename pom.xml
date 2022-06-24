@@ -5,15 +5,16 @@
 	<groupId>com.qa</groupId>
 	<artifactId>POMframework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<properties>
 		<aspectj.version>1.9.9.1</aspectj.version>
 		<selenium.version>4.1.4</selenium.version>
 		<maven.surefire>3.0.0-M7</maven.surefire>
-		<suiteFile>testng.xml</suiteFile> 
+		<suiteFile>testng.xml</suiteFile>
 		<allure-maven.version>2.11.2</allure-maven.version>
+		<extentreports.version>5.0.9</extentreports.version>
 	</properties>
-	
+
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -41,8 +42,30 @@
 			<artifactId>allure-testng</artifactId>
 			<version>2.18.1</version>
 		</dependency>
-
-
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>1.0.12</version>
+		</dependency>
+	<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreports.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -60,8 +83,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire}</version>
 				<configuration>
-				<parallel>methods</parallel>
-				<threadCount>2</threadCount>
+					<parallel>methods</parallel>
+					<threadCount>2</threadCount>
 					<suiteXmlFiles>
 						<suiteXmlFile>${suiteFile}</suiteXmlFile>
 					</suiteXmlFiles>
@@ -77,11 +100,11 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			 <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure-maven.version}</version>
-            </plugin>
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>${allure-maven.version}</version>
+			</plugin>
 		</plugins>
 	</build>
 </project>
