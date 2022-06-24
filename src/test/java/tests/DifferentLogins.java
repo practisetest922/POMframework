@@ -14,7 +14,7 @@ public class DifferentLogins extends BaseTest {
 
 	@Test(dataProvider="csvdata",dataProviderClass = CSVUtils.class,description = "Different logins with data")
 	@Description("Attempt to login")
-	public void firstTest(String testcase,String username,String password) throws InterruptedException   {
+	public void firstTest(String testcase,String username,String password) {
 		
 		HomePage hm=new HomePage(getDriver());
 		hm.openUrlSauce();

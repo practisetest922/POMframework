@@ -25,10 +25,9 @@ public class LoginPage extends BasePage{
 	private WebElement loginButton;
 	
 
-	public void loginTest(String userName, String password) throws InterruptedException{
+	public void loginTest(String userName, String password){
 		usernameTextBox.sendKeys(userName);
 		passwordTextBox.sendKeys(password);
-		Thread.sleep(5000);
 		loginButton.click();
 	   Assert.assertTrue(driver.findElement(By.className("title")).isDisplayed());
 	}
