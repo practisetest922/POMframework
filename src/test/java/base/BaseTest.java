@@ -20,13 +20,15 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import factory.DriverManager;
+import io.opentelemetry.sdk.autoconfigure.spi.ConfigProperties;
 import io.qameta.allure.Allure;
+import utils.ConfigFileReader;
 import utils.WebConfig;
 
 public class BaseTest {
 
 	ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-	//ExtentReports reports;
+	// ExtentReports reports;
 
 	private void setDriver(WebDriver driver) {
 		this.driver.set(driver);
@@ -50,18 +52,20 @@ public class BaseTest {
 
 	@Parameters("browser")
 	@BeforeMethod
-	public void startDriver(@Optional("chrome") String browser,Method method) {
-	//	 reports.createTest(method.getName());
+	public void startDriver(@Optional("chrome") String browser, Method method) {
+		// reports.createTest(method.getName());
 		setDriver(new DriverManager().initDriver(browser));
-		getDriver().get(WebConfig.BASE_CONFIG.getWebUrl());
-		System.out.println("Current thread: " + Thread.currentThread().getId() + ", " + "driver " + getDriver());
+		//ConfigFileReader cr = new ConfigFileReader();
+		//getDriver().get(cr.getApplicationUrl());
+		 getDriver().get(WebConfig.BASE_CONFIG.getWebUrl());
+		 System.out.println("Current thread: " + Thread.currentThread().getId() + ", " + "driver " + getDriver());
 	}
 
 	@AfterMethod
 	public void quitDriver(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
-	//		 reports.createTest(result.getName()).fail("fail");
-		    	Allure.addAttachment(result.getName(),
+			// reports.createTest(result.getName()).fail("fail");
+			Allure.addAttachment(result.getName(),
 					new ByteArrayInputStream(((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES)));
 		}
 		System.out.println("Current thread: " + Thread.currentThread().getId() + ", " + "driver " + getDriver());
