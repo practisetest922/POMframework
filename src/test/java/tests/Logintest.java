@@ -29,7 +29,7 @@ public class Logintest extends BaseTest {
 		hm.clickbuttonShopnow();
 		StorePage sp=new StorePage(getDriver());
 		sp.search("red");
-		assertEquals("Red",sp.verifyRed());
+		assertEquals("Red Shoes",sp.verifyRed());
 		
 	}
 	
