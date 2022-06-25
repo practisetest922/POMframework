@@ -33,17 +33,7 @@ public class Logintest extends BaseTest {
 		
 	}
 	
-	@Test(description = "Login and verify yellow ")
-	@Description("Searches for red ")
-	public void thirdTest() {
-		HomePage hm=new HomePage(getDriver());
-//		hm.openUrl();
-		hm.clickbuttonShopnow();
-		StorePage sp=new StorePage(getDriver());
-		sp.search("red");
-		assertEquals("Yellow",sp.verifyRed());
-		
-	}
+	
 	
 	
 }
