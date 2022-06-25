@@ -3,9 +3,9 @@ name: Selenium Automation
 on:
   push:
     branches: 
-      - ci
+      - main
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -19,4 +19,4 @@ jobs:
       with:
         java-version: 11
     - name: Run Acceptance test
-      run: mvn clean test
+      run: mvn clean test -Dbrowser=chrome -DsuiteFile=testngch.xml
