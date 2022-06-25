@@ -30,7 +30,7 @@ public class Logintest extends BaseTest {
 		StorePage sp=new StorePage(getDriver());
 		sp.search("red");
 		assertEquals("Red Shoes",sp.verifyRed());
-		
+//
 	}
 	
 	
