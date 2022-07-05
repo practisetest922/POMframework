@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jul 05 05:07:39 GMT 2022","Tue Jul 05 05:07:42 GMT 2022","2028","Suite","Tests in chrome","tests.Logintest","tests.Logintest","secondTest","Login and verify red ","Searches for red "
+"passed","Tue Jul 05 05:07:35 GMT 2022","Tue Jul 05 05:07:38 GMT 2022","2485","Suite","Tests in chrome","tests.Logintest","tests.Logintest","firstTest","Login and verify blue jeans","Searches for blue jeans"
+"failed","Tue Jul 05 05:07:35 GMT 2022","Tue Jul 05 05:07:38 GMT 2022","2443","Suite","Tests in chrome","tests.Logintest","tests.Logintest","ThirdTest","Login and verify yellow ","Searches for yellow "
